@@ -41,7 +41,7 @@ class Rent(models.Model):
     end_hours = models.CharField(max_length=5, blank=False, null=False)
     client = models.ForeignKey('Client', on_delete=CASCADE, related_name='rents')
     theme = models.ForeignKey('Theme', on_delete=CASCADE, related_name='rents')
-    end_price = models.FloatField()
+    end_price = models.FloatField(default=0)
     address = models.OneToOneField('Address', on_delete=models.CASCADE, null=True)
     
     def __str__(self):
